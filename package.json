@@ -1,0 +1,29 @@
+{
+  "name": "trillo",
+  "version": "1.0.0",
+  "description": "advanced css course",
+  "main": "index.js",
+  "scripts": {
+    "watch:scss": "node-sass scss/main.scss css/style.css -w",
+    "devServer": "live-server --port=4000",
+    "start": "npm-run-all --parallel devServer watch:scss",
+    "compile:scss": "node-sass scss/main.scss css/style.comp.css",
+    "prefix:css": "postcss --use autoprefixer -o css/style.prefix.css css/style.comp.css",
+    "compress:css": "node-sass css/style.prefix.css css/style.css --output-style compressed",
+    "build:css": "npm-run-all compile:scss prefix:css compress:css"
+  },
+  "author": "Yusuff Bello",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^10.0.1",
+    "concat": "^1.0.3",
+    "node-sass": "^4.14.1",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.1.1",
+    "postcss-cli": "^8.1.0"
+  },
+  "browserslist": [
+    "last 10 version"
+  ]
+}
